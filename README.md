@@ -9,8 +9,8 @@ An [Alfred](https://www.alfredapp.com/) workflow for setting the input / output 
 
 ## Prerequisites
 
-- [SwitchAudioSource](https://github.com/deweller/switchaudio-osx) (`brew install switchaudio-osx`)
-- [jq](https://stedolan.github.io/jq/) (`brew install jq`)
+- [SwitchAudioSource](https://github.com/deweller/switchaudio-osx) - `brew install switchaudio-osx`
+- [jq](https://stedolan.github.io/jq/) - `brew install jq`
 
 ## Installation
 

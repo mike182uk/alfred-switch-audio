@@ -22,7 +22,7 @@ clean: ## Clean the workspace
 
 .PHONY: install-tools
 install-tools: ## Install tools required by the project
-	if [ -z "$(CI)" ]; then brew install fd shfmt shellcheck; fi
+	if [ -z "$(CI)" ]; then brew install fd shfmt shellcheck jq switchaudio-osx; fi
 
 .PHONY: install
 install: install-tools ## Install project dependencies (including any required tools)
