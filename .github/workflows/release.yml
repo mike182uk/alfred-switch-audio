@@ -1,0 +1,22 @@
+name: Release
+
+on:
+  push:
+    tags: ['*']
+
+jobs:
+  alfred-set-audio-device:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build project
+        run: make build
+
+      - name: Create release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: build/SetAudioDevice.alfredworkflow
+          token: ${{ secrets.DEPLOY_TOKEN }}
