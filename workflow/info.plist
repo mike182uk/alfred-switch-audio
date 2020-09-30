@@ -4,8 +4,23 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.mike182uk.setAudioDevice.workflow</string>
+	<key>category</key>
+	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
+		<key>050110D1-6771-4E97-9448-8CFDC1131FB9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5D3D1AC2-C053-4C31-BE59-103753E2769F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3897AF68-5311-4ABD-A634-1EFEA5A424DA</key>
 		<array>
 			<dict>
@@ -45,11 +60,49 @@
 				<false/>
 			</dict>
 		</array>
+		<key>5D3D1AC2-C053-4C31-BE59-103753E2769F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C10E9D60-5F99-43EE-8543-80B19D12B88B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5F943BD1-CFB0-4632-872D-FE5FAA0DCBFF</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>C10E9D60-5F99-43EE-8543-80B19D12B88B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>293E5FBF-89AA-40A0-989A-C2CA90A9C426</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>08069BD9-3611-4A72-9E60-62BC25C0DDF2</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>8CB2AC47-B29A-47EE-BF8A-B768A0B003B9</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -69,27 +122,6 @@
 	<string>Set Audio Device</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Audio Input Device Set</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -161,6 +193,48 @@
 			<string>5F943BD1-CFB0-4632-872D-FE5FAA0DCBFF</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Audio Input Device Set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Audio Output Device Set</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>0F27F7F1-9AFA-4B5F-9FC5-3FE71A3E0555</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -237,21 +311,144 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>./set-group.sh $SwitchAudioSource_path $jq_path $config_path {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>5D3D1AC2-C053-4C31-BE59-103753E2769F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>set-audio-group</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Loading groups...</string>
+				<key>script</key>
+				<string>./get-groups.sh $jq_path $config_path</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Set Audio Device Group</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>050110D1-6771-4E97-9448-8CFDC1131FB9</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<true/>
+				<false/>
 				<key>removeextension</key>
 				<false/>
 				<key>text</key>
-				<string>{query}</string>
+				<string>Audio devices in the group have been set</string>
 				<key>title</key>
-				<string>Audio Output Device Set</string>
+				<string>Audio Group Devices Set</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>0F27F7F1-9AFA-4B5F-9FC5-3FE71A3E0555</string>
+			<string>293E5FBF-89AA-40A0-989A-C2CA90A9C426</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{query}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>input audio device set to .*\noutput audio device set to.*</string>
+						<key>outputlabel</key>
+						<string>ok</string>
+						<key>uid</key>
+						<string>08069BD9-3611-4A72-9E60-62BC25C0DDF2</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>not ok</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>C10E9D60-5F99-43EE-8543-80B19D12B88B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>There was a problem setting one or more of the audio devices in the group</string>
+				<key>title</key>
+				<string>Problem Setting Audio Device</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8CB2AC47-B29A-47EE-BF8A-B768A0B003B9</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -259,15 +456,29 @@
 	<key>readme</key>
 	<string>Set the current audio input / output device
 
-If required, modify the Workflow Variables to set the correct paths for SwitchAudioSource and jq.</string>
+If required, modify the Workflow Environment Variables to set the correct paths for SwitchAudioSource and jq.</string>
 	<key>uidata</key>
 	<dict>
+		<key>050110D1-6771-4E97-9448-8CFDC1131FB9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>115</integer>
+			<key>ypos</key>
+			<integer>365</integer>
+		</dict>
 		<key>0F27F7F1-9AFA-4B5F-9FC5-3FE71A3E0555</key>
 		<dict>
 			<key>xpos</key>
 			<integer>550</integer>
 			<key>ypos</key>
 			<integer>245</integer>
+		</dict>
+		<key>293E5FBF-89AA-40A0-989A-C2CA90A9C426</key>
+		<dict>
+			<key>xpos</key>
+			<integer>610</integer>
+			<key>ypos</key>
+			<integer>405</integer>
 		</dict>
 		<key>3897AF68-5311-4ABD-A634-1EFEA5A424DA</key>
 		<dict>
@@ -290,12 +501,26 @@ If required, modify the Workflow Variables to set the correct paths for SwitchAu
 			<key>ypos</key>
 			<integer>245</integer>
 		</dict>
+		<key>5D3D1AC2-C053-4C31-BE59-103753E2769F</key>
+		<dict>
+			<key>xpos</key>
+			<integer>340</integer>
+			<key>ypos</key>
+			<integer>365</integer>
+		</dict>
 		<key>5F943BD1-CFB0-4632-872D-FE5FAA0DCBFF</key>
 		<dict>
 			<key>xpos</key>
 			<integer>340</integer>
 			<key>ypos</key>
 			<integer>125</integer>
+		</dict>
+		<key>8CB2AC47-B29A-47EE-BF8A-B768A0B003B9</key>
+		<dict>
+			<key>xpos</key>
+			<integer>610</integer>
+			<key>ypos</key>
+			<integer>525</integer>
 		</dict>
 		<key>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</key>
 		<dict>
@@ -304,16 +529,25 @@ If required, modify the Workflow Variables to set the correct paths for SwitchAu
 			<key>ypos</key>
 			<integer>125</integer>
 		</dict>
+		<key>C10E9D60-5F99-43EE-8543-80B19D12B88B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>510</integer>
+			<key>ypos</key>
+			<integer>480</integer>
+		</dict>
 	</dict>
 	<key>variables</key>
 	<dict>
 		<key>SwitchAudioSource_path</key>
 		<string>/usr/local/bin/SwitchAudioSource</string>
+		<key>config_path</key>
+		<string>~/.alfred-set-audio-device-config.json</string>
 		<key>jq_path</key>
 		<string>/usr/local/bin/jq</string>
 	</dict>
 	<key>version</key>
-	<string>0.0.2</string>
+	<string>0.0.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/mike182uk/alfred-set-audio-device</string>
 </dict>

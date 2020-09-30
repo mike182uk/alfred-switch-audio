@@ -16,17 +16,57 @@ An [Alfred](https://www.alfredapp.com/) workflow for setting the input / output 
 
 Download the latest version of the workflow from [here](https://github.com/mike182uk/alfred-set-audio-device/releases).
 
-When you import the workflow into Alfred, the import screen will display a list of Workflow Variables that are available to the workflow:
+When you import the workflow into Alfred, the import screen will display a list of environment workflow variables that are available to the workflow:
   - `SwitchAudioSource_path` - The path to the `SwitchAudioSource` binary
   - `jq_path` - The path to the `jq` binary
+  - `config_path` - The path to workflow config file
 
-Modify these variables if you have these binaries installed elsewhere (run `which SwitchAudioSource` / `which jq` to get the correct path).
+Modify these variables if you have the binaries / config file in a different location.
 
 ## Usage
 
-1. Trigger Alfred
-2. Type `set-audio-in` / `set-audio-out`
-3. Use the up / down key to navigate to the audio device you want to set
-4. Press enter on the audio device you want to set
+### Setting the input audio device
 
-A notification will be displayed once showing which audio device has been set.
+1. Trigger Alfred
+2. Type `set-audio-in`
+3. Use the up / down key to navigate to the input audio device you want to set
+4. Press enter to set the input audio device
+
+A notification will be displayed showing which input audio device has been set.
+
+### Setting the output audio device
+
+1. Trigger Alfred
+2. Type `set-audio-out`
+3. Use the up / down key to navigate to the input audio device you want to set
+4. Press enter to set the output audio device
+
+A notification will be displayed showing which output audio device has been set.
+
+### Setting a group of audio devices
+
+To use this action, ensure you have a config file created for this workflow (located at ` ~/.alfred-set-audio-device-config.json` - This location can be modified by editing the `config_path` environment workflow variable):
+
+```json
+{
+  "groups": {
+    "desktop": {
+      "title": "Desktop",
+      "input": "HD Pro Webcam C920",
+      "output": "Scarlett 2i2 USB"
+    },
+    "airpods": {
+      "title": "airpods",
+      "input": "Mike's AirPods Pro",
+      "output": "Mike's AirPods Pro"
+    }
+  }
+}
+```
+
+1. Trigger Alfred
+2. Type `set-audio-group`
+3. Use the up / down key to navigate to the audio device group you want to set
+4. Press enter to set the input and output audio devices associated with the group
+
+A notification will be displayed confirming the audio devices have been set.
