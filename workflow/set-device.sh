@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-type=$1
-query=$2
+SwitchAudioSourcePath=$1
+type=$2
+query=$3
 
 # Set audio device
-SwitchAudioSource -s "$query" -t "$type" >/dev/null
+$SwitchAudioSourcePath -s "$query" -t "$type" >/dev/null
 
 # Get current audio device
-SwitchAudioSource -c -t "$type"
+$SwitchAudioSourcePath -c -t "$type"

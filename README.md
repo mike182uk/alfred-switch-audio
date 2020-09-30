@@ -14,7 +14,13 @@ An [Alfred](https://www.alfredapp.com/) workflow for setting the input / output 
 
 ## Installation
 
-Download the latest version of the workflow from  [here](https://github.com/mike182uk/alfred-set-audio-device/releases).
+Download the latest version of the workflow from [here](https://github.com/mike182uk/alfred-set-audio-device/releases).
+
+When you import the workflow into Alfred, the import screen will display a list of Workflow Variables that are available to the workflow:
+  - `SwitchAudioSource_path` - The path to the `SwitchAudioSource` binary
+  - `jq_path` - The path to the `jq` binary
+
+Modify these variables if you have these binaries installed elsewhere (run `which SwitchAudioSource` / `which jq` to get the correct path).
 
 ## Usage
 
@@ -23,29 +29,4 @@ Download the latest version of the workflow from  [here](https://github.com/mike
 3. Use the up / down key to navigate to the audio device you want to set
 4. Press enter on the audio device you want to set
 
-A notification will be displayed once the audio device has been set.
-
-## Troubleshooting
-
-### The workflow is reporting that `SwitchAudioSource` or `jq` can not be found
-
-The workflow will search for `SwitchAudioSource` / `jq` in:
-
-- `/usr/local/bin/`
-- `/usr/bin`
-- `/bin`
-- `/usr/sbin`
-- `/sbin`
-
-If you have installed `SwitchAudioSource` / `jq` to a different location you will need to modify the workflow to use this path:
-
-1. Go to Alfred preferences
-2. Select the `Set Audio Device` workflow
-3. Double click on a `Script Filter` node
-4. In the script field, you should see `PATH=/usr/local/bin/:$PATH` before the command that is being executed. Modify this to include your path for `SwitchAudioSource` / `jq`:
-
-```sh
-PATH=$PATH:/my/custom/path/bin ./get-devices input
-```
-
-Repeat the above for each `Script Filter` & `Run Script` node in the Alfred workflow.
+A notification will be displayed once showing which audio device has been set.
