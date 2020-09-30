@@ -12,6 +12,6 @@ $jqPath '.groups | to_entries | map({
   "uid": .key,
   "title": .value.title,
   "arg": .key,
-  "autocomplete": .value.title,
+  "subtitle": (.value.input + " · " + .value.output),
   "icon": { "path": "zap.png" }
 }) | sort_by(.title) | { "items": . } ' "$configPath"

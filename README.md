@@ -21,7 +21,7 @@ When you import the workflow into Alfred, the import screen will display a list 
   - `jq_path` - The path to the `jq` binary
   - `config_path` - The path to workflow config file
 
-Modify these variables if you have the binaries / config file in a different location.
+Modify these variables if you have the binaries or config file in a different location.
 
 ## Usage
 
@@ -56,7 +56,7 @@ To use this action, ensure you have a config file created for this workflow (loc
       "output": "Scarlett 2i2 USB"
     },
     "airpods": {
-      "title": "airpods",
+      "title": "AirPods",
       "input": "Mike's AirPods Pro",
       "output": "Mike's AirPods Pro"
     }
