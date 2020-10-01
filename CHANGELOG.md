@@ -4,6 +4,10 @@
 
 - 
 
+## 0.0.4
+
+Show which devices are in a group
+
 ## 0.0.3
 
 Add ability to set a group of audio devices in one go
