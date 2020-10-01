@@ -4,8 +4,6 @@ SwitchAudioSourcePath=$1
 type=$2
 query=$3
 
-# Set audio device
-$SwitchAudioSourcePath -s "$query" -t "$type" >/dev/null
+result=$($SwitchAudioSourcePath -s "$query" -t "$type")
 
-# Get current audio device
-$SwitchAudioSourcePath -c -t "$type"
+[[ $result =~ "audio device set to" ]] && echo "$query"

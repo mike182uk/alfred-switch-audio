@@ -5,21 +5,14 @@ jqPath=$2
 configPath="${3/#\~/$HOME}"
 query=$4
 
-if [ ! -f "$configPath" ]; then
-	echo "Config file not found"
-	exit
-fi
-
 function getDevice() {
-	$jqPath -r ".groups | to_entries | map({
-    \"id\": .key,
-    \"input\": .value.input,
-    \"output\": .value.output
-  }) | .[] | select(.id == \"$1\").$2" "$configPath"
+	# shellcheck disable=SC2016
+	$jqPath -r '.groups | to_entries | map({
+    id: .key,
+    input: .value.input,
+    output: .value.output
+  }) | .[] | select(.id == $id)[$key]' --arg id "$1" --arg key "$2" "$configPath"
 }
 
-inputDevice=$(getDevice "$query" "input")
-outputDevice=$(getDevice "$query" "output")
-
-$SwitchAudioSourcePath -s "$inputDevice" -t input
-$SwitchAudioSourcePath -s "$outputDevice" -t output
+$SwitchAudioSourcePath -s "$(getDevice "$query" input)" -t input
+$SwitchAudioSourcePath -s "$(getDevice "$query" output)" -t output

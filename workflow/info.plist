@@ -21,20 +21,7 @@
 				<false/>
 			</dict>
 		</array>
-		<key>3897AF68-5311-4ABD-A634-1EFEA5A424DA</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0F27F7F1-9AFA-4B5F-9FC5-3FE71A3E0555</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
-		<key>4F99906F-4E20-4988-A3C1-86F5283A2C30</key>
+		<key>0E64435D-07F4-42CA-849F-2686E582AB7A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
@@ -47,11 +34,24 @@
 				<false/>
 			</dict>
 		</array>
+		<key>4F99906F-4E20-4988-A3C1-86F5283A2C30</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BAEC67CE-A9FE-489B-A006-20503304537E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>5AE6A8AD-748F-440B-B746-FF38608FF460</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>3897AF68-5311-4ABD-A634-1EFEA5A424DA</string>
+				<string>0E64435D-07F4-42CA-849F-2686E582AB7A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -77,7 +77,20 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</string>
+				<string>0F27F7F1-9AFA-4B5F-9FC5-3FE71A3E0555</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>BAEC67CE-A9FE-489B-A006-20503304537E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>5F943BD1-CFB0-4632-872D-FE5FAA0DCBFF</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -158,7 +171,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Set Audio Input Device</string>
+				<string>Set input audio device</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -174,12 +187,34 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>device_type</key>
+					<string>input</string>
+					<key>device_type_ucfirst</key>
+					<string>Input</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>BAEC67CE-A9FE-489B-A006-20503304537E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>./set-device.sh $SwitchAudioSource_path input {query}</string>
+				<string>./set-device.sh $SwitchAudioSource_path $device_type {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -206,28 +241,7 @@
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Audio Input Device Set</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Audio Output Device Set</string>
+				<string>{var:device_type_ucfirst} audio device set</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -272,7 +286,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Set Audio Output Device</string>
+				<string>Set output audio device</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -288,25 +302,24 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>119</integer>
-				<key>script</key>
-				<string>./set-device.sh $SwitchAudioSource_path output {query}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
+				<key>argument</key>
+				<string>{query}</string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>device_type</key>
+					<string>output</string>
+					<key>device_type_ucfirst</key>
+					<string>Output</string>
+				</dict>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
-			<string>3897AF68-5311-4ABD-A634-1EFEA5A424DA</string>
+			<string>0E64435D-07F4-42CA-849F-2686E582AB7A</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -367,7 +380,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Set Audio Device Group</string>
+				<string>Set group of audio devices</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -392,7 +405,7 @@
 				<key>text</key>
 				<string>Audio devices in the group have been set</string>
 				<key>title</key>
-				<string>Audio Group Devices Set</string>
+				<string>Audio group devices set</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -443,7 +456,7 @@
 				<key>text</key>
 				<string>There was a problem setting one or more of the audio devices in the group</string>
 				<key>title</key>
-				<string>Problem Setting Audio Device</string>
+				<string>Problem setting audio device</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -456,85 +469,85 @@
 	<key>readme</key>
 	<string>Set the current audio input / output device
 
-If required, modify the Workflow Environment Variables to set the correct paths for SwitchAudioSource and jq.</string>
+If required, modify the workflow environment variables to set the correct paths.</string>
 	<key>uidata</key>
 	<dict>
 		<key>050110D1-6771-4E97-9448-8CFDC1131FB9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>115</integer>
+			<integer>35</integer>
 			<key>ypos</key>
-			<integer>365</integer>
+			<integer>370</integer>
+		</dict>
+		<key>0E64435D-07F4-42CA-849F-2686E582AB7A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>240</integer>
+			<key>ypos</key>
+			<integer>275</integer>
 		</dict>
 		<key>0F27F7F1-9AFA-4B5F-9FC5-3FE71A3E0555</key>
 		<dict>
 			<key>xpos</key>
-			<integer>550</integer>
+			<integer>565</integer>
 			<key>ypos</key>
-			<integer>245</integer>
+			<integer>180</integer>
 		</dict>
 		<key>293E5FBF-89AA-40A0-989A-C2CA90A9C426</key>
 		<dict>
 			<key>xpos</key>
-			<integer>610</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>405</integer>
-		</dict>
-		<key>3897AF68-5311-4ABD-A634-1EFEA5A424DA</key>
-		<dict>
-			<key>xpos</key>
-			<integer>340</integer>
-			<key>ypos</key>
-			<integer>245</integer>
+			<integer>390</integer>
 		</dict>
 		<key>4F99906F-4E20-4988-A3C1-86F5283A2C30</key>
 		<dict>
 			<key>xpos</key>
-			<integer>115</integer>
+			<integer>35</integer>
 			<key>ypos</key>
 			<integer>125</integer>
 		</dict>
 		<key>5AE6A8AD-748F-440B-B746-FF38608FF460</key>
 		<dict>
 			<key>xpos</key>
-			<integer>115</integer>
+			<integer>35</integer>
 			<key>ypos</key>
 			<integer>245</integer>
 		</dict>
 		<key>5D3D1AC2-C053-4C31-BE59-103753E2769F</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>365</integer>
+			<integer>370</integer>
 		</dict>
 		<key>5F943BD1-CFB0-4632-872D-FE5FAA0DCBFF</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>390</integer>
 			<key>ypos</key>
-			<integer>125</integer>
+			<integer>180</integer>
 		</dict>
 		<key>8CB2AC47-B29A-47EE-BF8A-B768A0B003B9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>610</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>525</integer>
+			<integer>515</integer>
 		</dict>
-		<key>BA5DBE14-E165-48EC-B0CB-F5700DDD6EB2</key>
+		<key>BAEC67CE-A9FE-489B-A006-20503304537E</key>
 		<dict>
 			<key>xpos</key>
-			<integer>550</integer>
+			<integer>240</integer>
 			<key>ypos</key>
-			<integer>125</integer>
+			<integer>155</integer>
 		</dict>
 		<key>C10E9D60-5F99-43EE-8543-80B19D12B88B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>510</integer>
+			<integer>410</integer>
 			<key>ypos</key>
-			<integer>480</integer>
+			<integer>470</integer>
 		</dict>
 	</dict>
 	<key>variables</key>
@@ -547,7 +560,7 @@ If required, modify the Workflow Environment Variables to set the correct paths 
 		<string>/usr/local/bin/jq</string>
 	</dict>
 	<key>version</key>
-	<string>0.0.3</string>
+	<string>0.0.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/mike182uk/alfred-set-audio-device</string>
 </dict>
