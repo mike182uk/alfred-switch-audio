@@ -7,11 +7,7 @@ query=$4
 
 function getDevice() {
 	# shellcheck disable=SC2016
-	$jqPath -r '.groups | to_entries | map({
-    id: .key,
-    input: .value.input,
-    output: .value.output
-  }) | .[] | select(.id == $id)[$key]' --arg id "$1" --arg key "$2" "$configPath"
+	$jqPath -r '.groups | with_entries(select(.key == $id))[$id][$key]' --arg id "$1" --arg key "$2" "$configPath"
 }
 
 $SwitchAudioSourcePath -s "$(getDevice "$query" input)" -t input
