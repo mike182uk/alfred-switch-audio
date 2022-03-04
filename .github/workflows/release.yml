@@ -18,5 +18,5 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: build/SetAudioDevice.alfredworkflow
+          artifacts: build/switchaudio.alfredworkflow
           token: ${{ secrets.DEPLOY_TOKEN }}
