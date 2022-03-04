@@ -4,6 +4,12 @@
 
 - 
 
+## 0.0.5
+
+- Rename to `alfred-switch-audio`
+- Change default location of config to `~/.alfred-switchaudio.json`
+- Update icons
+
 ## 0.0.4
 
 Show which devices are in a group
