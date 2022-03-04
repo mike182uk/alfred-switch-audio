@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  alfred-set-audio-device:
+  alfred-switch-audio:
     runs-on: ubuntu-latest
 
     steps:

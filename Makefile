@@ -1,6 +1,6 @@
 BUILD_DIR=./build
 WORKFLOW_DIR=./workflow
-WORKFLOW_PKG=SetAudioDevice.alfredworkflow
+WORKFLOW_PKG_NAME=switchaudio.alfredworkflow
 
 .PHONY: fmt
 fmt: ## Format the source files
@@ -13,8 +13,8 @@ lint: ## Lint the source files
 .PHONY: build
 build: clean ## Build the workflow
 	@mkdir $(BUILD_DIR)
-	@cd $(WORKFLOW_DIR) && zip -rq $(WORKFLOW_PKG) *
-	@mv $(WORKFLOW_DIR)/$(WORKFLOW_PKG) $(BUILD_DIR)/$(WORKFLOW_PKG)
+	@cd $(WORKFLOW_DIR) && zip -rq $(WORKFLOW_PKG_NAME) *
+	@mv $(WORKFLOW_DIR)/$(WORKFLOW_PKG_NAME) $(BUILD_DIR)/$(WORKFLOW_PKG_NAME)
 
 .PHONY: clean
 clean: ## Clean the workspace

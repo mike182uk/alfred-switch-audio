@@ -1,9 +1,9 @@
-# alfred-set-audio-device
+# alfred-switch-audio
 
-[![Version](https://img.shields.io/github/release/mike182uk/alfred-set-audio-device.svg?style=flat-square)](https://github.com/mike182uk/alfred-set-audio-device)
-[![Build Status](https://img.shields.io/github/workflow/status/mike182uk/alfred-set-audio-device/CI/master?style=flat-square)](https://github.com/mike182uk/alfred-set-audio-device/actions?query=workflow%3ACI)
-[![Downloads](https://img.shields.io/github/downloads/mike182uk/alfred-set-audio-device/total.svg?style=flat-square)](https://github.com/mike182uk/alfred-set-audio-device)
-[![License](https://img.shields.io/github/license/mike182uk/alfred-set-audio-device.svg?style=flat-square)](https://github.com/mike182uk/alfred-set-audio-device)
+[![Version](https://img.shields.io/github/release/mike182uk/alfred-switch-audio.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
+[![Build Status](https://img.shields.io/github/workflow/status/mike182uk/alfred-switch-audio/CI/master?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio/actions?query=workflow%3ACI)
+[![Downloads](https://img.shields.io/github/downloads/mike182uk/alfred-switch-audio/total.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
+[![License](https://img.shields.io/github/license/mike182uk/alfred-switch-audio.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
 
 An [Alfred](https://www.alfredapp.com/) workflow for setting the input / output audio device.
 
@@ -14,7 +14,7 @@ An [Alfred](https://www.alfredapp.com/) workflow for setting the input / output 
 
 ## Installation
 
-Download the latest version of the workflow from [here](https://github.com/mike182uk/alfred-set-audio-device/releases).
+Download the latest version of the workflow from [here](https://github.com/mike182uk/alfred-switch-audio/releases).
 
 When you import the workflow into Alfred, the import screen will display a list of environment workflow variables that are available to the workflow:
   - `SwitchAudioSource_path` - The path to the `SwitchAudioSource` binary
@@ -45,7 +45,7 @@ A notification will be displayed showing which output audio device has been set.
 
 ### Setting a group of audio devices
 
-To use this action, ensure you have a config file created for this workflow (located at ` ~/.alfred-set-audio-device-config.json` - This location can be modified by editing the `config_path` environment workflow variable):
+To use this action, ensure you have a config file created for this workflow (located at ` ~/.alfred-switchaudio.json` - This location can be modified by editing the `config_path` environment workflow variable):
 
 ```json
 {

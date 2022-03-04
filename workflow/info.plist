@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.mike182uk.setAudioDevice.workflow</string>
+	<string>com.mike182uk.switchaudio</string>
 	<key>category</key>
 	<string>Productivity</string>
 	<key>connections</key>
@@ -132,7 +132,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Set Audio Device</string>
+	<string>Switch Audio</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -555,13 +555,13 @@ If required, modify the workflow environment variables to set the correct paths.
 		<key>SwitchAudioSource_path</key>
 		<string>/usr/local/bin/SwitchAudioSource</string>
 		<key>config_path</key>
-		<string>~/.alfred-set-audio-device-config.json</string>
+		<string>~/.alfred-switchaudio.json</string>
 		<key>jq_path</key>
 		<string>/usr/local/bin/jq</string>
 	</dict>
 	<key>version</key>
-	<string>0.0.4</string>
+	<string>0.0.5</string>
 	<key>webaddress</key>
-	<string>https://github.com/mike182uk/alfred-set-audio-device</string>
+	<string>https://github.com/mike182uk/alfred-switch-audio</string>
 </dict>
 </plist>

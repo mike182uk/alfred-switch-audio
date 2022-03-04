@@ -2,11 +2,11 @@
 
 Contributions are **welcome!**
 
-Contributions can be made via a Pull Request on [GitHub](https://github.com/mike182uk/alfred-set-audio-device).
+Contributions can be made via a Pull Request on [GitHub](https://github.com/mike182uk/alfred-switch-audio).
 
 ## Reporting an Issue
 
-Please report issues via the issue tracker on [GitHub](https://github.com/mike182uk/alfred-set-audio-device). For security-related issues, please email the maintainer directly.
+Please report issues via the issue tracker on [GitHub](https://github.com/mike182uk/alfred-switch-audio). For security-related issues, please email the maintainer directly.
 
 ## Pull Requests
 

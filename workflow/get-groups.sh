@@ -4,7 +4,7 @@ jqPath=$1
 configPath="${2/#\~/$HOME}"
 
 if [ ! -f "$configPath" ]; then
-	exit
+  exit
 fi
 
 $jqPath '.groups | to_entries | map({
@@ -13,5 +13,5 @@ $jqPath '.groups | to_entries | map({
   subtitle: (.value.input + " · " + .value.output),
   arg: .key,
   autocomplete: .value.title,
-  icon: { path: "zap.png" }
+  icon: { path: "050110D1-6771-4E97-9448-8CFDC1131FB9.png" }
 }) | sort_by(.title) | { items: . }' "$configPath"
