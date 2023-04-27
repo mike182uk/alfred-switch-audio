@@ -1,7 +1,7 @@
 # alfred-switch-audio
 
 [![Version](https://img.shields.io/github/release/mike182uk/alfred-switch-audio.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
-[![Build Status](https://img.shields.io/github/workflow/status/mike182uk/alfred-switch-audio/CI/master?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio/actions?query=workflow%3ACI)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/mike182uk/alfred-switch-audio/ci.yml?branch=master&style=flat-square)](https://github.com/mike182uk/alfred-switch-audio/actions?query=workflow%3ACI)
 [![Downloads](https://img.shields.io/github/downloads/mike182uk/alfred-switch-audio/total.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
 [![License](https://img.shields.io/github/license/mike182uk/alfred-switch-audio.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
 
