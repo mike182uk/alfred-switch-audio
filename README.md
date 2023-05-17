@@ -1,3 +1,5 @@
+#### ⚠️ This project is no longer maintained
+
 # alfred-switch-audio
 
 [![Version](https://img.shields.io/github/release/mike182uk/alfred-switch-audio.svg?style=flat-square)](https://github.com/mike182uk/alfred-switch-audio)
